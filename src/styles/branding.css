@@ -1,0 +1,353 @@
+/* branding.css */
+
+/* Variables de marca - inspiradas en tu landing page con fondo oscuro y texto dorado */
+:root {
+  /* Fondo principal oscuro */
+  --brand-dark-bg: #1c1d20;
+  /* Dorado principal */
+  --brand-gold: #dac71d;
+  /* Dorado hover */
+  --brand-gold-hover: #e7cf72;
+
+  /* Otras variables que puedes necesitar */
+  --brand-white: #ffffff;
+  --brand-black: #000000;
+  --brand-gray: #666666;
+
+  /* Paginador (ejemplo, por si lo usas) */
+  --paginator-normal-bg: #2c2d30;
+  --paginator-normal-color: #ffffff;
+  --paginator-hover-bg: #3a3b3e;
+  --paginator-highlight-bg: #dac71d;
+  --paginator-highlight-color: #000000;
+  --paginator-disabled-bg: #999999;
+  --paginator-disabled-color: #ffffff;
+}
+
+/* ===================
+   Botones PrimeReact
+   =================== */
+.p-button {
+  background-color: var(--brand-gold) !important;
+  border-color: var(--brand-gold) !important;
+  color: var(--brand-white) !important;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.p-button:hover {
+  background-color: var(--brand-gold-hover) !important;
+  border-color: var(--brand-gold-hover) !important;
+}
+
+/* ==========================
+     Menubar (fondo oscuro)
+     ========================== */
+/* Barra principal */
+.p-menubar {
+  background-color: var(--brand-dark-bg) !important;
+  color: var(--brand-gold) !important; /* Texto dorado */
+  border: none !important;
+  padding: 0.25rem 1rem !important; /* Menos padding vertical */
+  min-height: 48px !important; /* o menos si querés más compacto */
+}
+
+/* Ítems de la barra principal */
+.p-menubar .p-menuitem-link,
+.p-menubar .p-menuitem-link span,
+.p-menubar .p-menuitem-link .p-menuitem-text {
+  color: var(--brand-gold) !important;
+  background-color: transparent !important;
+}
+
+/* Hover ítems principales: atenuación leve o subrayado */
+.p-menubar .p-menuitem-link:hover {
+  background-color: #262729 !important;
+  color: var(--brand-gold-hover) !important;
+}
+
+/* Submenús */
+.p-submenu-list {
+  background-color: var(--brand-dark-bg) !important;
+  color: var(--brand-gold) !important;
+}
+
+/* Ítems de submenús */
+.p-submenu-list .p-menuitem-link,
+.p-submenu-list .p-menuitem-link span,
+.p-submenu-list .p-menuitem-link .p-menuitem-text {
+  color: var(--brand-gold) !important;
+}
+
+.p-submenu-list .p-menuitem-link:hover {
+  background-color: #262729 !important;
+  color: var(--brand-gold-hover) !important;
+}
+
+/* Flechita del submenú en dorado */
+.p-menuitem .p-submenu-icon {
+  color: var(--brand-gold) !important;
+}
+
+/* =========================================
+     DataTable (encabezados en dorado, fondo oscuro)
+     ========================================= */
+/* Mantén la cabecera con fondo oscuro (o dorado) */
+.p-datatable-thead > tr > th {
+  background-color: var(--brand-dark-bg) !important; /* O el color que prefieras */
+  color: var(--brand-gold) !important;
+}
+
+/* DataTable como contenedor general */
+.p-datatable {
+  background-color: transparent !important; /* Para no forzar color en todo */
+  border: none !important;
+}
+
+/* Cuerpo de la DataTable en blanco */
+.p-datatable-tbody > tr > td {
+  background-color: #ffffff !important; /* fondo blanco */
+  color: #000000 !important; /* texto negro */
+  border: none !important; /* quita bordes si no los quieres */
+}
+
+/* (Opcional) Hover de filas en un gris clarito */
+.p-datatable-tbody > tr:hover > td {
+  background-color: #f5f5f5 !important;
+  color: #000000 !important;
+}
+
+/* =========================================
+     Paginador
+     ========================================= */
+.p-paginator .p-paginator-pages .p-paginator-page:not(.p-highlight):not(.p-disabled) {
+  background-color: var(--paginator-normal-bg) !important;
+  color: var(--paginator-normal-color) !important;
+  border: none !important;
+}
+
+/* Hover en páginas normales */
+.p-paginator .p-paginator-pages .p-paginator-page:not(.p-highlight):not(.p-disabled):hover {
+  background-color: var(--paginator-hover-bg) !important;
+  color: var(--paginator-normal-color) !important;
+}
+
+/* Página seleccionada */
+.p-paginator .p-paginator-pages .p-paginator-page.p-highlight {
+  background-color: var(--paginator-highlight-bg) !important; /* dorado */
+  color: var(--paginator-highlight-color) !important; /* negro */
+  border: none !important;
+}
+
+/* Páginas deshabilitadas */
+.p-paginator .p-paginator-pages .p-paginator-page.p-disabled {
+  background-color: var(--paginator-disabled-bg) !important;
+  color: var(--paginator-disabled-color) !important;
+  cursor: not-allowed !important;
+  border: none !important;
+}
+
+/* Flechas del paginador (<<, <, >, >>) */
+.p-paginator .p-paginator-icon {
+  color: var(--paginator-normal-color) !important;
+}
+
+/* ================================
+     Inputs y focus en estilo dorado
+     ================================ */
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--brand-gold) !important;
+  box-shadow: 0 0 0 2px rgba(218, 199, 29, 0.3) !important;
+  outline: none !important;
+}
+
+/* ================================
+     Paneles, Cards, Headers
+     ================================ */
+.p-panel .p-panel-header,
+.p-card .p-card-header {
+  background-color: var(--brand-dark-bg) !important;
+  color: var(--brand-gold) !important;
+}
+
+/* ================================
+     Menubar en mobile
+     ================================ */
+.p-menubar-root-list,
+.p-menubar-mobile-active .p-menubar-root-list {
+  background-color: var(--brand-dark-bg) !important;
+  color: var(--brand-gold) !important;
+  border: none !important;
+}
+
+.p-menubar-button {
+  color: var(--brand-gold) !important;
+}
+
+.p-menubar-root-list .p-menuitem-link,
+.p-menubar-root-list .p-menuitem-text,
+.p-menubar-root-list .p-menuitem-icon {
+  color: var(--brand-gold) !important;
+}
+
+.p-menubar-root-list .p-menuitem-link:hover {
+  background-color: #262729 !important;
+  color: var(--brand-gold-hover) !important;
+}
+
+/* ================================
+     Dialog
+     ================================ */
+/* Sobrescribe el botón de cerrar del Dialog de PrimeReact */
+/* Sobrescribir el contenedor del close button */
+.p-dialog-header-close {
+  margin-right: 0.5rem !important;
+}
+
+/* Estilo para la X: background gris, circular, con el icono centrado */
+.p-dialog-header-close .p-dialog-header-icon {
+  background-color: #666666 !important; /* Color gris (ajusta a tu branding) */
+  color: #ffffff !important; /* X en blanco o el color que prefieras */
+  border-radius: 50% !important;
+  width: 32px !important;
+  height: 32px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: background-color 0.3s ease, color 0.3s ease !important;
+}
+
+/* Hover: opcional, puede cambiar el tono del gris */
+.p-dialog-header-close .p-dialog-header-icon:hover {
+  background-color: #555555 !important; /* Un gris más oscuro o más claro, según tu preferencia */
+  color: #ffffff !important;
+}
+
+/* Oculta el ícono interno del row toggler */
+.p-row-toggler i {
+  display: none !important;
+}
+
+/* Ícono para el toggler cerrado: muestra la flecha a la derecha */
+.p-row-toggler::before {
+  content: "\e930" !important; /* Código para pi-chevron-right */
+  font-family: "primeicons" !important;
+  font-size: 1.4rem !important;
+  color: var(--brand-gold) !important; /* O el color que desees para el botón cerrado */
+  display: inline-block;
+}
+
+/* Ícono para el toggler abierto: muestra la flecha hacia abajo */
+.p-row-toggler.p-row-toggler-open::before {
+  content: "\e931" !important; /* Código para pi-chevron-down */
+  font-family: "primeicons" !important;
+  font-size: 1.4rem !important;
+  color: var(--brand-gold) !important; /* O el color que desees para el botón abierto */
+}
+
+/* ================================
+   Íconos de orden en DataTable
+   ================================ */
+.p-sortable-column-icon {
+  color: var(--brand-gold) !important; /* usa tu variable de branding dorado */
+}
+
+/* Opcional: color al pasar el mouse por la columna */
+.p-column-header:hover .p-sortable-column-icon {
+  color: var(--brand-gold-hover) !important;
+}
+
+/* Espaciado entre los botones del ConfirmDialog */
+.p-confirm-dialog .p-dialog-footer {
+  display: flex;
+  justify-content: end;
+  gap: 0.75rem; /* otra forma, más moderna */
+}
+
+/* =====================================
+   UniqueMenu / Menu contextual PrimeReact
+   ===================================== */
+.p-menu {
+  color: var(--brand-gold) !important;
+  border: none !important;
+  border-radius: 0.5rem !important;
+  min-width: 140px;
+  padding: 0.25rem 0 !important;
+}
+
+.p-menu .p-menuitem-link {
+  color: var(--brand-gold) !important;
+  background-color: transparent !important;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  padding: 0.5rem 1rem;
+  font-size: 0.95rem;
+  border-radius: 0 !important;
+}
+
+.p-menu .p-menuitem-link:hover {
+  background-color: var(--brand-gold-hover) !important;
+  color: var(--brand-black) !important;
+}
+
+.p-menu .p-menuitem {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.p-menu .p-menuitem:last-child {
+  border-bottom: none;
+}
+
+.p-menu .p-menuitem-disabled {
+  opacity: 0.5 !important;
+  pointer-events: none !important;
+}
+
+/* ========================
+   Estilo global para Tag
+   ======================== */
+.p-tag {
+  background-color: var(--brand-gray) !important;
+  color: white !important;
+  border: none !important;
+  padding: 0.35rem 0.6rem !important;
+  font-size: 0.75rem !important;
+  border-radius: 4px !important;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 0 !important; /* 🔥 evita espacio entre ícono y texto vacío */
+  box-shadow: none !important;
+  line-height: 1 !important;
+}
+
+/* Icono dentro del Tag */
+.p-tag .pi {
+  font-size: 1rem !important;
+  line-height: 1 !important;
+}
+
+/* Evita margen lateral si NO hay valor de texto */
+.p-tag .p-tag-value:empty {
+  display: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Mes y año del Calendar */
+.p-datepicker .p-datepicker-title {
+  color: #000000 !important; /* Negro o el color que prefieras */
+  font-weight: 600;
+}
+
+/* Opcional: estilizar el mes y el año por separado */
+.p-datepicker .p-datepicker-month,
+.p-datepicker .p-datepicker-year {
+  color: #000000 !important; /* Negro o tu branding */
+}
+
+/* Opcional: íconos de navegación (flechas) en blanco o dorado */
+.p-datepicker .p-datepicker-prev-icon,
+.p-datepicker .p-datepicker-next-icon {
+  color: var(--brand-gold) !important;
+}

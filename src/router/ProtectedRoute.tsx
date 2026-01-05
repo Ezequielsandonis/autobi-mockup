@@ -1,0 +1,24 @@
+import React from "react";
+import { Navigate, Outlet } from "react-router-dom";
+import { useAppSelector } from "../app/hooks";
+import { selectIsAuthenticated } from "../features/auth/store/authSlice";
+
+interface ProtectedRouteProps {
+  redirectTo?: string;
+}
+
+const ProtectedRoute: React.FC<ProtectedRouteProps> = ({ redirectTo = "/login" }) => {
+  const isAuthenticated = useAppSelector(selectIsAuthenticated);
+
+  if (!isAuthenticated) {
+    return <Navigate to={redirectTo} replace />;
+  }
+
+  return (
+    <div className="p-5">
+      <Outlet />
+    </div>
+  );
+};
+
+export default ProtectedRoute;
