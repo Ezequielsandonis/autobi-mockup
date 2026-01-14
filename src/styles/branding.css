@@ -351,3 +351,42 @@ select:focus {
 .p-datepicker .p-datepicker-next-icon {
   color: var(--brand-gold) !important;
 }
+
+/* ================================
+     TabView - Tabs más visibles
+     ================================ */
+.p-tabview-nav {
+  background-color: transparent !important;
+  border-bottom: 2px solid #e2e8f0 !important;
+  margin-bottom: 0 !important;
+}
+
+.p-tabview-nav li .p-tabview-nav-link {
+  padding: 1rem 1.5rem !important;
+  font-weight: 600 !important;
+  font-size: 0.95rem !important;
+  color: #64748b !important;
+  border: none !important;
+  border-bottom: 3px solid transparent !important;
+  background-color: transparent !important;
+  transition: all 0.2s ease !important;
+  margin-right: 0.5rem !important;
+}
+
+.p-tabview-nav li .p-tabview-nav-link:hover {
+  color: #8b5cf6 !important;
+  background-color: #f5f3ff !important;
+  border-bottom-color: #c4b5fd !important;
+}
+
+.p-tabview-nav li.p-highlight .p-tabview-nav-link {
+  color: #8b5cf6 !important;
+  background-color: transparent !important;
+  border-bottom-color: #8b5cf6 !important;
+  font-weight: 700 !important;
+}
+
+.p-tabview-nav li .p-tabview-nav-link:focus {
+  outline: none !important;
+  box-shadow: 0 0 0 2px rgba(139, 92, 246, 0.2) !important;
+}

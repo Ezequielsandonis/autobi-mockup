@@ -11,11 +11,20 @@ import { Home } from "../pages/Home";
 import { PublicLayout } from "../components/layout/PublicLayout";
 import { Dashboard } from "../pages/Dashboard";
 import { ProfilePage } from "../features/users";
+import { TicketPlusPage } from "../features/ticket-plus";
+import { EmpoweredSellerPage } from "../features/empowered-seller";
+import { AutoFolderPage } from "../features/auto-folder";
 
 // import ProfilePage from "../features/users/pages/ProfilePage";
 
 export const AppRouter: React.FC = () => (
-  <BrowserRouter basename="/">
+  <BrowserRouter 
+    basename="/"
+    future={{
+      v7_startTransition: true,
+      v7_relativeSplatPath: true,
+    }}
+  >
     <Routes>
       {/* Rutas públicas sin autenticación */}
       <Route path="/" element={<Navigate to="/dashboard" replace />} />
@@ -31,7 +40,9 @@ export const AppRouter: React.FC = () => (
       <Route element={<PrivateLayout />}>
         <Route element={<ProtectedRoute />}>
           <Route path="/dashboard" element={<Dashboard />} />
-
+          <Route path="/ticket-plus" element={<TicketPlusPage />} />
+          <Route path="/auto-folder" element={<AutoFolderPage />} />
+          <Route path="/empowered-seller" element={<EmpoweredSellerPage />} />
         </Route>
       </Route>
 

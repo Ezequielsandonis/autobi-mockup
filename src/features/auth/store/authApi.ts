@@ -15,12 +15,15 @@ export const authApi = baseApi.injectEndpoints({
         try {
           const { data } = await queryFulfilled;
           const { result } = data;
-          dispatch(
-            setCredentials({
-              accessToken: result.accessToken,
-              refreshToken: result.refreshToken || "",
-            })
-          );
+          // El backend devuelve result.data.access_token y result.data.refresh_token
+          if (result?.data) {
+            dispatch(
+              setCredentials({
+                accessToken: result.data.access_token,
+                refreshToken: result.data.refresh_token || "",
+              })
+            );
+          }
         } catch (error) {
           console.error("Error en login:", error);
         }
@@ -35,12 +38,16 @@ export const authApi = baseApi.injectEndpoints({
       async onQueryStarted(_arg, { dispatch, queryFulfilled }) {
         try {
           const { data } = await queryFulfilled;
-          dispatch(
-            setCredentials({
-              accessToken: data.result.accessToken,
-              refreshToken: data.result.refreshToken || "",
-            })
-          );
+          const { result } = data;
+          // El backend devuelve result.data.access_token y result.data.refresh_token
+          if (result?.data) {
+            dispatch(
+              setCredentials({
+                accessToken: result.data.access_token,
+                refreshToken: result.data.refresh_token || "",
+              })
+            );
+          }
         } catch (error) {
           console.error("Error en register:", error);
         }
@@ -55,12 +62,16 @@ export const authApi = baseApi.injectEndpoints({
       async onQueryStarted(_arg, { dispatch, queryFulfilled }) {
         try {
           const { data } = await queryFulfilled;
-          dispatch(
-            setCredentials({
-              accessToken: data.result.accessToken,
-              refreshToken: data.result.refreshToken || "",
-            })
-          );
+          const { result } = data;
+          // El backend devuelve result.data.access_token y result.data.refresh_token
+          if (result?.data) {
+            dispatch(
+              setCredentials({
+                accessToken: result.data.access_token,
+                refreshToken: result.data.refresh_token || _arg.token,
+              })
+            );
+          }
         } catch (error) {
           dispatch(setLogout());
           console.error("Error en refresh token:", error);

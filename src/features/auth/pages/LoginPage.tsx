@@ -2,9 +2,11 @@ import React, { useState, useRef } from "react";
 import { useLoginMutation } from "../store/authApi";
 import { useNavigate } from "react-router-dom";
 import { useLazyGetUserByEmailQuery } from "../../users";
-import { useAppDispatch } from "../../../app/hooks";
+import { useAppDispatch, useAppSelector } from "../../../app/hooks";
 import { showToast } from "../../ui/uiSlice";
 import { AuthResponse, LoginRequest } from "../types";
+import { AUTH_CONFIG } from "../../../utils/constants";
+import { selectAuthToken } from "../store/authSlice";
 import { InputText } from "primereact/inputtext";
 import { Password } from "primereact/password";
 import { Button } from "primereact/button";
@@ -35,7 +37,12 @@ export const LoginPage: React.FC = () => {
       return;
     }
 
-    login({ email, password })
+    login({ 
+      email, 
+      password,
+      tenantId: AUTH_CONFIG.defaultTenantId,
+      organizationId: AUTH_CONFIG.defaultOrganizationId
+    })
       .unwrap()
       .then((data: AuthResponse) => {
         // Toast de éxito al iniciar sesión
@@ -46,23 +53,31 @@ export const LoginPage: React.FC = () => {
           life: 2000,
         });
 
-        // Llamamos al endpoint para obtener el perfil del usuario
-        triggerGetUserByEmail(email)
-          .unwrap()
-          .then((profile: any) => {
-            // Navegar después de obtener el perfil
-            setTimeout(() => {
-              navigate("/dashboard");
-            }, 1000);
-          })
-          .catch((err: any) => {
-            toast.current?.show({
-              severity: "error",
-              summary: "Error",
-              detail: "No se pudo obtener el perfil del usuario",
-              life: 4000,
-            });
-          });
+        // Esperamos un momento para asegurar que el token se haya guardado en Redux
+        // antes de hacer la siguiente petición. Usamos requestAnimationFrame para
+        // asegurar que el estado de Redux se haya actualizado
+        requestAnimationFrame(() => {
+          setTimeout(() => {
+            // Llamamos al endpoint para obtener el perfil del usuario
+            triggerGetUserByEmail(email)
+              .unwrap()
+              .then((profile: any) => {
+                // Navegar después de obtener el perfil
+                setTimeout(() => {
+                  navigate("/dashboard");
+                }, 1000);
+              })
+              .catch((err: any) => {
+                console.error("Error al obtener perfil:", err);
+                toast.current?.show({
+                  severity: "error",
+                  summary: "Error",
+                  detail: err?.data?.message || "No se pudo obtener el perfil del usuario",
+                  life: 4000,
+                });
+              });
+          }, 200); // Delay para asegurar que el token esté en el estado de Redux
+        });
       })
       .catch((err) => {
         console.error("Error en login:", err);
