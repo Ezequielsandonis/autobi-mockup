@@ -1,8 +1,8 @@
 {
-  "buildCommand": "npm run build",
-  "outputDirectory": "dist",
-  "devCommand": "npm run dev",
-  "installCommand": "npm install",
+  "buildCommand": "cd bff-client && npm run build",
+  "outputDirectory": "bff-client/dist",
+  "devCommand": "cd bff-client && npm run dev",
+  "installCommand": "cd bff-client && npm install",
   "framework": "vite",
   "rewrites": [
     {
