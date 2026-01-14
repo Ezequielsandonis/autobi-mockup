@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { Outlet, Navigate } from "react-router-dom";
-import { useAppSelector } from "../../app/hooks";
-import { selectIsAuthenticated } from "../../features/auth/store/authSlice";
+import { Outlet } from "react-router-dom";
+// import { Navigate } from "react-router-dom";
+// import { useAppSelector } from "../../app/hooks";
+// import { selectIsAuthenticated } from "../../features/auth/store/authSlice";
 import { Sidebar, SidebarItem } from "./Sidebar";
 import { TopBar } from "./TopBar";
 import { colors } from "../../shared/design-system";
@@ -38,11 +39,12 @@ const sidebarItems: SidebarItem[] = [
 ];
 
 export const PrivateLayout: React.FC = () => {
-  const isAuthenticated = useAppSelector(selectIsAuthenticated);
+  // Saltando autenticación para desarrollo sin backend
+  // const isAuthenticated = useAppSelector(selectIsAuthenticated);
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   // Si no está autenticado, redirige a login
-  if (!isAuthenticated) return <Navigate to="/login" />;
+  // if (!isAuthenticated) return <Navigate to="/login" />;
 
   return (
     <div className="flex flex-col min-h-screen" style={{ backgroundColor: colors.background.light }}>
