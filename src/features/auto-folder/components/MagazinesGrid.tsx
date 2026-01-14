@@ -303,10 +303,10 @@ export const MagazinesGrid: React.FC<MagazinesGridProps> = React.memo(({ magazin
           >
             <div className="flex items-center justify-between mb-2">
               <div>
-                <Typography variant="h5" fontWeight="bold" style={{ color: colors.text.light, fontSize: "20px" }}>
+                <Typography variant="h5" fontWeight="bold" style={{ color: colors.text.darkPrimary, fontSize: "20px" }}>
                   Revista {magazine.channel}
                 </Typography>
-                <Typography variant="caption" style={{ color: colors.text.light, opacity: 0.95, fontSize: "12px" }}>
+                <Typography variant="caption" style={{ color: colors.text.darkPrimary, opacity: 0.95, fontSize: "12px" }}>
                   Diciembre 2025
                 </Typography>
               </div>

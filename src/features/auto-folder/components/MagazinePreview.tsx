@@ -218,10 +218,10 @@ export const MagazinePreview: React.FC<MagazinePreviewProps> = React.memo(({
         >
           <div className="flex items-center justify-between flex-wrap gap-4">
             <div>
-              <Typography variant="h4" fontWeight="bold" style={{ color: colors.text.light, marginBottom: spacingPresets.component.xs }}>
+              <Typography variant="h4" fontWeight="bold" style={{ color: colors.text.darkPrimary, marginBottom: spacingPresets.component.xs }}>
                 Revista {channel}
               </Typography>
-              <Typography variant="body2" style={{ color: colors.text.light, opacity: 0.9 }}>
+              <Typography variant="body2" style={{ color: colors.text.darkPrimary, opacity: 0.9 }}>
                 Ofertas especiales - Diciembre 2025
               </Typography>
             </div>
@@ -232,7 +232,7 @@ export const MagazinePreview: React.FC<MagazinePreviewProps> = React.memo(({
                 borderRadius: "8px",
               }}
             >
-              <Typography variant="body2" fontWeight="600" style={{ color: colors.text.light }}>
+              <Typography variant="body2" fontWeight="600" style={{ color: colors.text.darkPrimary }}>
                 PREVIEW - Pendiente de Aprobación
               </Typography>
             </div>
