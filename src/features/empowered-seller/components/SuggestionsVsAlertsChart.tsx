@@ -54,7 +54,7 @@ export const SuggestionsVsAlertsChart: React.FC<SuggestionsVsAlertsChartProps> =
             borderRadius: "8px",
             boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
           }}
-          formatter={(value: number, name: string) => [value.toLocaleString("es-AR"), name]}
+          formatter={(value: number | undefined, name: string) => [(value ?? 0).toLocaleString("es-AR"), name]}
           labelFormatter={(label) => `Mes: ${label}`}
         />
         <Legend

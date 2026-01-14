@@ -47,9 +47,9 @@ export const MatchRateTrendChart: React.FC<MatchRateTrendChartProps> = React.mem
             borderRadius: "8px",
             boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
           }}
-          formatter={(value: number, name: string) => {
+          formatter={(value: number | undefined, name: string) => {
             if (name === "Tasa de Coincidencia") {
-              return [`${value.toFixed(1)}%`, name];
+              return [`${(value ?? 0).toFixed(1)}%`, name];
             }
             return [value.toLocaleString("es-AR"), name];
           }}

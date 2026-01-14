@@ -62,7 +62,7 @@ export const MatchByTypeChart: React.FC<MatchByTypeChartProps> = React.memo(({ d
             borderRadius: "8px",
             boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
           }}
-          formatter={(value: number) => [`${value.toFixed(1)}%`, "Tasa de Coincidencia"]}
+          formatter={(value: number | undefined) => [`${(value ?? 0).toFixed(1)}%`, "Tasa de Coincidencia"]}
           labelFormatter={(label) => `Tipo: ${label}`}
         />
         <Bar dataKey="Tasa de Coincidencia" radius={[4, 4, 0, 0]}>

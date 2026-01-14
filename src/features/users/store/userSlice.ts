@@ -2,16 +2,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import Cookies from "js-cookie";
 import { RootState } from "../../../app/store";
-import { UserRoles } from "../types/user.types";
-
-export interface Address {
-  addr1: string;
-  addr2?: string;
-  city: string;
-  state: string;
-  country: string;
-  zip: string;
-}
+import { UserRoles, Address } from "../types/user.types";
 
 /**
  * Representa los datos del usuario.

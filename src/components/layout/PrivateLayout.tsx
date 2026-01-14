@@ -47,7 +47,7 @@ export const PrivateLayout: React.FC = () => {
   // if (!isAuthenticated) return <Navigate to="/login" />;
 
   return (
-    <div className="flex flex-col min-h-screen" style={{ backgroundColor: colors.background.light }}>
+    <div className="flex flex-col min-h-screen" style={{ backgroundColor: colors.background.light as string }}>
       <GlobalToast />
       <GlobalLoader />
       

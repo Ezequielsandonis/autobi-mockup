@@ -63,7 +63,7 @@ export const TopBrandsChart: React.FC<TopBrandsChartProps> = React.memo(({ data 
             borderRadius: "8px",
             boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
           }}
-          formatter={(value: number) => [value.toLocaleString("es-AR"), "Productos"]}
+          formatter={(value: number | undefined) => [value ? value.toLocaleString("es-AR") : "0", "Productos"]}
         />
         <Bar dataKey="cantidad" radius={[0, 4, 4, 0]}>
           {chartData.map((entry, index) => (

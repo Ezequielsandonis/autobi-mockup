@@ -59,7 +59,7 @@ export const TicketPlusPage: React.FC = () => {
       />
 
       {/* Content */}
-      <div className="flex-1 overflow-y-auto p-6 space-y-6" style={{ backgroundColor: colors.background.light }}>
+      <div className="flex-1 overflow-y-auto p-6 space-y-6" style={{ backgroundColor: colors.background.light as string }}>
         {/* Filtro de Año */}
         <div className="flex items-center gap-4" style={{ backgroundColor: colors.background.paper, padding: "16px", borderRadius: "8px" }}>
           <label className="text-sm font-medium" style={{ color: colors.text.primary }}>

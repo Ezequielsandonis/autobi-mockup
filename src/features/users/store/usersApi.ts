@@ -17,13 +17,13 @@ export const usersApi = baseApi.injectEndpoints({
         method: "PATCH",
         body: data,
       }),
-      invalidatesTags: ["Users", "DailyLog"],
+      invalidatesTags: ["Users"],
     }),
 
     // Obtener comparación de macros para una fecha
     getMacroComparison: builder.query<ApiResponse<MacroComparison>, string>({
       query: (date) => `/users/macros?date=${date}`,
-      providesTags: (result, error, date) => [{ type: "DailyLog", id: date }],
+      providesTags: ["Users"],
     }),
   }),
 });

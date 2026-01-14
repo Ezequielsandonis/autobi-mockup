@@ -244,7 +244,7 @@ export const SuggestionsPreview: React.FC<SuggestionsPreviewProps> = React.memo(
                 <div
                   key={index}
                   style={{
-                    backgroundColor: colors.background.light,
+                    backgroundColor: colors.background.light as string,
                     padding: spacingPresets.component.xs,
                     borderRadius: "6px",
                     border: `1px solid ${colors.border.light}`,

@@ -297,7 +297,7 @@ export const MagazinesGrid: React.FC<MagazinesGridProps> = React.memo(({ magazin
             style={{
               background: `linear-gradient(135deg, ${magazine.color} 0%, ${magazine.color}dd 100%)`,
               padding: spacingPresets.container.md,
-              color: colors.text.light,
+              color: colors.text.darkPrimary,
               boxShadow: `0 4px 12px ${magazine.color}40`,
             }}
           >
@@ -362,7 +362,7 @@ export const MagazinesGrid: React.FC<MagazinesGridProps> = React.memo(({ magazin
                       top: "-8px",
                       right: "12px",
                       backgroundColor: getTypeColor(product.type, magazine.color),
-                      color: colors.text.light,
+                      color: colors.text.darkPrimary,
                       padding: "4px 10px",
                       borderRadius: "12px",
                       fontSize: "10px",
@@ -445,7 +445,7 @@ export const MagazinesGrid: React.FC<MagazinesGridProps> = React.memo(({ magazin
                       <div
                         style={{
                           background: `linear-gradient(135deg, ${colors.success.main} 0%, ${colors.success.dark} 100%)`,
-                          color: colors.text.light,
+                          color: colors.text.darkPrimary,
                           padding: "3px 8px",
                           borderRadius: "6px",
                           fontSize: "10px",
@@ -476,7 +476,7 @@ export const MagazinesGrid: React.FC<MagazinesGridProps> = React.memo(({ magazin
                 <div
                   style={{
                     backgroundColor: magazine.color,
-                    color: colors.text.light,
+                    color: colors.text.darkPrimary,
                     width: "24px",
                     height: "24px",
                     borderRadius: "50%",

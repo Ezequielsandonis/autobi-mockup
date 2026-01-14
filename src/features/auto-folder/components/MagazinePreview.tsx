@@ -213,7 +213,7 @@ export const MagazinePreview: React.FC<MagazinePreviewProps> = React.memo(({
             padding: spacingPresets.container.lg,
             borderRadius: "8px 8px 0 0",
             margin: `-${spacingPresets.container.md} -${spacingPresets.container.md} ${spacingPresets.container.lg} -${spacingPresets.container.md}`,
-            color: colors.text.light,
+            color: colors.text.darkPrimary,
           }}
         >
           <div className="flex items-center justify-between flex-wrap gap-4">
@@ -271,14 +271,14 @@ export const MagazinePreview: React.FC<MagazinePreviewProps> = React.memo(({
                   top: spacingPresets.component.sm,
                   right: spacingPresets.component.sm,
                   backgroundColor: getTypeColor(product.type),
-                  color: colors.text.light,
+                  color: colors.text.darkPrimary,
                   padding: `${spacingPresets.component.xs} ${spacingPresets.component.sm}`,
                   borderRadius: "6px",
                   zIndex: 1,
                   boxShadow: "0 2px 4px rgba(0,0,0,0.1)",
                 }}
               >
-                <Typography variant="caption" fontWeight="bold" style={{ color: colors.text.light, fontSize: "10px" }}>
+                <Typography variant="caption" fontWeight="bold" style={{ color: colors.text.darkPrimary, fontSize: "10px" }}>
                   {getTypeLabel(product.type)}
                 </Typography>
               </div>
@@ -288,7 +288,7 @@ export const MagazinePreview: React.FC<MagazinePreviewProps> = React.memo(({
                 style={{
                   width: "100%",
                   height: "180px",
-                  backgroundColor: colors.background.light,
+                  backgroundColor: colors.background.light as string,
                   borderRadius: "12px",
                   marginBottom: spacingPresets.component.md,
                   border: `1px solid ${colors.border.light}`,
@@ -310,7 +310,7 @@ export const MagazinePreview: React.FC<MagazinePreviewProps> = React.memo(({
                     target.style.display = "none";
                     if (target.parentElement) {
                       target.parentElement.innerHTML = `
-                        <div style="display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; background: ${colors.background.light};">
+                        <div style="display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; background: ${colors.background.light as string};">
                           <i class="pi pi-image" style="font-size: 3rem; color: ${colors.text.disabled};"></i>
                         </div>
                       `;

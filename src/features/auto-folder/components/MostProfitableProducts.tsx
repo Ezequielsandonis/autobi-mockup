@@ -105,7 +105,7 @@ export const MostProfitableProducts: React.FC<MostProfitableProductsProps> = Rea
                   height: "32px",
                   borderRadius: "50%",
                   backgroundColor: index < 3 ? colors.warning.main : colors.text.disabled,
-                  color: colors.text.light,
+                  color: colors.text.darkPrimary,
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",

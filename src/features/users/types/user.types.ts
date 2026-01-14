@@ -85,3 +85,33 @@ export interface Address {
  */
 export type UserResponse = ApiResponse<User>;
 export type AllUsersResponse = ApiResponse<User[]>;
+
+// Tipos para funcionalidades de nutrición (si se necesitan en el futuro)
+export interface SetNutritionGoalDto {
+  calories?: number;
+  protein?: number;
+  carbs?: number;
+  fat?: number;
+}
+
+export interface MacroComparison {
+  date: string;
+  goal: {
+    calories: number;
+    protein: number;
+    carbs: number;
+    fat: number;
+  };
+  consumed: {
+    calories: number;
+    protein: number;
+    carbs: number;
+    fat: number;
+  };
+  percentage: {
+    calories: number;
+    protein: number;
+    carbs: number;
+    fat: number;
+  };
+}

@@ -52,7 +52,7 @@ export const MonthlyTrendChart: React.FC<MonthlyTrendChartProps> = React.memo(({
             border: `1px solid ${colors.border.light}`,
             borderRadius: "8px",
           }}
-          formatter={(value: number) => [formatValue(value), label]}
+          formatter={(value: number | undefined) => [formatValue(value ?? 0), label]}
         />
         <Line
           type="monotone"

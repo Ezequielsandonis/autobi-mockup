@@ -1,4 +1,27 @@
-import { ContainerType, ExerciseType, ExerciseIntensity, CONTAINER_ML_VALUES, CALORIES_PER_MINUTE } from "../features/wellness/types/wellness.types";
+// Tipos temporales - estos módulos no existen en este proyecto
+type ContainerType = "GLASS" | "CUP" | "SMALL_BOTTLE" | "BOTTLE" | "LARGE_BOTTLE" | "THERMOS" | "SPORTS_BOTTLE" | "CUSTOM";
+type ExerciseType = "RUNNING" | "WALKING" | "CYCLING" | "SWIMMING" | "ROWING" | "ELLIPTICAL" | "JUMP_ROPE" | "HIKING" | "DANCING" | "WEIGHTLIFTING" | "BODYWEIGHT" | "CROSSFIT" | "CALISTHENICS" | "YOGA" | "PILATES" | "STRETCHING" | "TAI_CHI" | "SOCCER" | "BASKETBALL" | "TENNIS" | "VOLLEYBALL" | "BADMINTON" | "TABLE_TENNIS" | "GOLF" | "BOXING" | "KICKBOXING" | "KARATE" | "JUDO" | "MMA" | "CLIMBING" | "SKIING" | "SKATING" | "SURFING" | "CUSTOM";
+type ExerciseIntensity = "LOW" | "MODERATE" | "HIGH" | "VERY_HIGH";
+
+const CONTAINER_ML_VALUES: Record<ContainerType, number> = {
+  GLASS: 250,
+  CUP: 200,
+  SMALL_BOTTLE: 330,
+  BOTTLE: 500,
+  LARGE_BOTTLE: 1000,
+  THERMOS: 750,
+  SPORTS_BOTTLE: 750,
+  CUSTOM: 500,
+};
+
+const CALORIES_PER_MINUTE: Record<ExerciseIntensity, number> = {
+  LOW: 3,
+  MODERATE: 5,
+  HIGH: 8,
+  VERY_HIGH: 12,
+};
+
+// import { ContainerType, ExerciseType, ExerciseIntensity, CONTAINER_ML_VALUES, CALORIES_PER_MINUTE } from "../features/wellness/types/wellness.types";
 
 /**
  * Obtiene el label en español para cada tipo de contenedor

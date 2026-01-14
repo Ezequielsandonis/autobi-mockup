@@ -59,9 +59,9 @@ export const ByProductTypeChart: React.FC<ByProductTypeChartProps> = React.memo(
             borderRadius: "8px",
             boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
           }}
-          formatter={(value: number, name: string) => {
+          formatter={(value: number | undefined, name: string) => {
             if (name === "Cantidad") {
-              return [value.toLocaleString("es-AR"), name];
+              return [value ? value.toLocaleString("es-AR") : "0", name];
             }
             return [`${value.toFixed(1)}%`, name];
           }}

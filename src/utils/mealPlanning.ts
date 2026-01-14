@@ -1,6 +1,11 @@
-import { PlanStatus } from "../features/meal-planning/types/mealPlan.types";
-import { ConsumedItemSource } from "../features/daily-log/types/dailyLog.types";
-import { MealType } from "../features/meals/types/meal.types";
+// Tipos temporales - estos módulos no existen en este proyecto
+type PlanStatus = "CONSUMED" | "PLANNED" | "SKIPPED";
+type ConsumedItemSource = "MANUAL" | "SCANNED" | "RECIPE";
+type MealType = "BREAKFAST" | "LUNCH" | "DINNER" | "SNACK" | "PRE_WORKOUT" | "POST_WORKOUT" | "POST_DINNER";
+
+// import { PlanStatus } from "../features/meal-planning/types/mealPlan.types";
+// import { ConsumedItemSource } from "../features/daily-log/types/dailyLog.types";
+// import { MealType } from "../features/meals/types/meal.types";
 
 /**
  * Obtiene el color del badge según el estado del plan

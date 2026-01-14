@@ -125,7 +125,7 @@ export const TopBar: React.FC<TopBarProps> = ({ onSidebarToggle }) => {
               onClick={(e) => menu.current?.toggle(e)}
               className="flex items-center gap-2 p-2 rounded-lg hover:opacity-80 transition-opacity"
               style={{
-                backgroundColor: colors.background.light,
+                backgroundColor: colors.background.light as string,
               }}
               aria-label="User menu"
             >

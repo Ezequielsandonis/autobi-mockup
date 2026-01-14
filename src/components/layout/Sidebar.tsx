@@ -32,7 +32,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ items }) => {
   }, [isCollapsed]);
 
   const toggleSidebar = useCallback(() => {
-    setIsCollapsed((prev) => !prev);
+    setIsCollapsed((prev: boolean) => !prev);
   }, []);
 
   const isActive = useCallback((path: string) => {

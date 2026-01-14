@@ -229,14 +229,6 @@ export const mockImpactoAutobimation: ImpactoAutobimation = {
       cambio: 20.0,
     },
   },
-  monthlyComparison: [
-    { month: "Jul", before: 19500000, after: 20500000 },
-    { month: "Ago", before: 19600000, after: 21800000 },
-    { month: "Sep", before: 19700000, after: 23200000 },
-    { month: "Oct", before: 19800000, after: 24500000 },
-    { month: "Nov", before: 19900000, after: 25800000 },
-    { month: "Dic", before: 20000000, after: 27000000 },
-  ],
 };
 
 // Datos para gráfico comparativo de evolución (6 meses)

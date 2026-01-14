@@ -70,7 +70,7 @@ export const SectionNavbar: React.FC<SectionNavbarProps> = React.memo(({
                 icon={action.icon}
                 onClick={action.onClick}
                 outlined={action.outlined}
-                severity={action.severity || "primary"}
+                severity={action.severity || "info"}
                 size="small"
               />
             ))}

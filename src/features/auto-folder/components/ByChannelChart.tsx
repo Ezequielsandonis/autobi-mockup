@@ -68,7 +68,7 @@ export const ByChannelChart: React.FC<ByChannelChartProps> = React.memo(({ data 
             borderRadius: "8px",
             boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
           }}
-          formatter={(value: number) => value.toLocaleString("es-AR")}
+          formatter={(value: number | undefined) => value ? value.toLocaleString("es-AR") : "0"}
           labelFormatter={(label) => `Canal: ${label}`}
         />
         <Bar dataKey="Revistas Creadas" radius={[4, 4, 0, 0]}>

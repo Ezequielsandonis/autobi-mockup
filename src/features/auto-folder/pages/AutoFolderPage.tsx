@@ -77,7 +77,7 @@ export const AutoFolderPage: React.FC = () => {
       />
 
       {/* Content */}
-      <div className="flex-1 overflow-hidden" style={{ backgroundColor: colors.background.light }}>
+      <div className="flex-1 overflow-hidden" style={{ backgroundColor: colors.background.light as string }}>
         <TabView
           activeIndex={activeTabIndex}
           onTabChange={(e) => setActiveTabIndex(e.index)}
@@ -85,7 +85,7 @@ export const AutoFolderPage: React.FC = () => {
         >
           {/* Tab: Métricas */}
           <TabPanel header="Métricas">
-            <div className="flex-1 overflow-y-auto" style={{ backgroundColor: colors.background.light, padding: spacingPresets.container.md }}>
+            <div className="flex-1 overflow-y-auto" style={{ backgroundColor: colors.background.light as string, padding: spacingPresets.container.md }}>
               <div style={{ display: "flex", flexDirection: "column", gap: spacingPresets.section.md }}>
                 {/* Filtro de Año */}
                 <div className="flex items-center" style={{ 
@@ -159,7 +159,9 @@ export const AutoFolderPage: React.FC = () => {
                         <Typography variant="body2" color={colors.text.secondary} style={{ marginBottom: spacingPresets.component.md }}>
                           Top marcas que más aparecen en las revistas generadas.
                         </Typography>
-                        <TopBrandsChart data={metrics.productsByBrand || []} />
+                        <TopBrandsChart data={(metrics.productsByBrand || []).filter((item): item is { brand: string; total: number; percentage: number } => 
+                          !!item.brand && typeof item.total === 'number' && typeof item.percentage === 'number'
+                        )} />
                       </Card>
 
                       <Card
@@ -217,7 +219,7 @@ export const AutoFolderPage: React.FC = () => {
 
           {/* Tab: Vista Previa */}
           <TabPanel header="Vista Previa">
-            <div className="flex-1 overflow-y-auto" style={{ backgroundColor: colors.background.light, padding: spacingPresets.container.md }}>
+            <div className="flex-1 overflow-y-auto" style={{ backgroundColor: colors.background.light as string, padding: spacingPresets.container.md }}>
               <div style={{ display: "flex", flexDirection: "column", gap: spacingPresets.section.md }}>
                 {/* Explicación breve */}
                 <Card

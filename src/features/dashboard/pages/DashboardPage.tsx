@@ -15,20 +15,20 @@ export const DashboardPage: React.FC = () => {
         subtitle="Análisis histórico y medición de impacto de Autobimation"
       />
 
-      <div className="flex-1 overflow-hidden" style={{ backgroundColor: colors.background.light }}>
+      <div className="flex-1 overflow-hidden" style={{ backgroundColor: colors.background.light as string }}>
         <TabView
           activeIndex={activeIndex}
           onTabChange={(e) => setActiveIndex(e.index)}
           className="h-full"
         >
           <TabPanel header="Análisis Histórico">
-            <div style={{ backgroundColor: colors.background.light, padding: spacingPresets.container.md }}>
+            <div style={{ backgroundColor: colors.background.light as string, padding: spacingPresets.container.md }}>
               <AnalisisHistoricoView />
             </div>
           </TabPanel>
           
           <TabPanel header="Autobimation">
-            <div style={{ backgroundColor: colors.background.light, padding: spacingPresets.container.md }}>
+            <div style={{ backgroundColor: colors.background.light as string, padding: spacingPresets.container.md }}>
               <ImpactoAutobimationView />
             </div>
           </TabPanel>

@@ -85,7 +85,7 @@ export const EmpoweredSellerPage: React.FC = () => {
       />
 
       {/* Content */}
-      <div className="flex-1 overflow-hidden" style={{ backgroundColor: colors.background.light }}>
+      <div className="flex-1 overflow-hidden" style={{ backgroundColor: colors.background.light as string }}>
         <TabView
           activeIndex={activeTabIndex}
           onTabChange={(e) => setActiveTabIndex(e.index)}
@@ -93,7 +93,7 @@ export const EmpoweredSellerPage: React.FC = () => {
         >
           {/* Tab: Métricas */}
           <TabPanel header="Métricas">
-            <div className="flex-1 overflow-y-auto" style={{ backgroundColor: colors.background.light, padding: spacingPresets.container.md }}>
+            <div className="flex-1 overflow-y-auto" style={{ backgroundColor: colors.background.light as string, padding: spacingPresets.container.md }}>
         <div style={{ display: "flex", flexDirection: "column", gap: spacingPresets.section.md }}>
           {/* Filtro de Año */}
           <div className="flex items-center" style={{ 
@@ -308,7 +308,7 @@ export const EmpoweredSellerPage: React.FC = () => {
 
           {/* Tab: Vista Previa */}
           <TabPanel header="Vista Previa">
-            <div className="flex-1 overflow-y-auto overflow-x-hidden" style={{ backgroundColor: colors.background.light, padding: spacingPresets.container.md }}>
+            <div className="flex-1 overflow-y-auto overflow-x-hidden" style={{ backgroundColor: colors.background.light as string, padding: spacingPresets.container.md }}>
               <div style={{ display: "flex", flexDirection: "column", gap: spacingPresets.section.lg, minWidth: 0 }}>
                 {/* Sugerencias */}
                 <div>

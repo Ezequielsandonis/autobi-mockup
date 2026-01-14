@@ -58,7 +58,7 @@ export const ComparativeChart: React.FC<ComparativeChartProps> = React.memo(({
             borderRadius: "8px",
             boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
           }}
-          formatter={(value: number) => defaultFormatter(value)}
+          formatter={(value: number | undefined) => defaultFormatter(value ?? 0)}
           labelFormatter={(label) => `Mes: ${label}`}
         />
         <Legend

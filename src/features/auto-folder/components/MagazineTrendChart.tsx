@@ -54,9 +54,9 @@ export const MagazineTrendChart: React.FC<MagazineTrendChartProps> = React.memo(
             borderRadius: "8px",
             boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
           }}
-          formatter={(value: number, name: string) => {
+          formatter={(value: number | undefined, name: string) => {
             if (name === "Valor de Órdenes") {
-              return [new Intl.NumberFormat("es-AR", { style: "currency", currency: "ARS", minimumFractionDigits: 0 }).format(value), name];
+              return [value ? new Intl.NumberFormat("es-AR", { style: "currency", currency: "ARS", minimumFractionDigits: 0 }).format(value) : "$0", name];
             }
             return [value.toLocaleString("es-AR"), name];
           }}
